@@ -6,7 +6,7 @@ SOURCES += \
         transactionmanager.cpp \
         transaction.cpp
 
-resources.files = main.qml Page1.qml Page2.qml Page3.qml Page4.qml
+resources.files = main.qml Page1.qml MainPage.qml Page2.qml Page3.qml Page4.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources
 

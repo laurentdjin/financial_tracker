@@ -7,7 +7,10 @@ Item {
     height: 800
 
     Rectangle {
-        anchors.fill: parent
+        anchors.bottom: parent.bottom
+        width: parent.width
+        height: parent.height - 20
+        //anchors.fill: parent
         color: "lightblue"
 
         ColumnLayout {

@@ -9,9 +9,11 @@ ApplicationWindow {
     title: "Financial App"
 
     StackView {
-        id: stackView
+         id: stackView
         anchors.fill: parent
         initialItem: Page1 {}
     }
+
+
 
 }

@@ -4,8 +4,6 @@ import QtQuick.Layouts
 
 Item {
     id: page3
-    width: 600
-    height: 800
 
     property double selectedDay: 0
     property date selectedDate: new Date()
@@ -35,6 +33,7 @@ Item {
     Text {
         id: pageTitle
         text: "Add a transaction"
+        y: 100
         anchors.horizontalCenter: parent.horizontalCenter
         font.pixelSize: 30
     }
@@ -42,7 +41,7 @@ Item {
     Grid {
         id: form
         x : 40
-        y: pageTitle.height + 40
+        y: pageTitle.y + pageTitle.height + 40
         width: parent.width - x
         height: parent.height - y
         columns: 2

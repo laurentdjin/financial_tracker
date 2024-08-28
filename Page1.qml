@@ -3,7 +3,7 @@ import QtQuick.Controls 6.7
 import QtQuick.Layouts 6.7
 
 Item {
-    width: 800
+    width: 600
     height: 800
 
     Rectangle {
@@ -52,7 +52,7 @@ Item {
                     onClicked: {
                         if (user_text.text !== "" && login_text.text !== "") {
                             if (dbManager.checkCredentials(user_text.text, login_text.text)) {
-                                stackView.push(Qt.resolvedUrl("Page2.qml"))
+                                stackView.push(Qt.resolvedUrl("MainPage.qml"))
                             } else {
                                 console.log("Identifiants incorrects.");
                             }
@@ -70,7 +70,7 @@ Item {
                         onClicked: {
                             if (user_text.text !== "" && login_text.text !== "") {
                                 dbManager.insertData(user_text.text, login_text.text)
-                                stackView.push(Qt.resolvedUrl("Page2.qml"))
+                                stackView.push(Qt.resolvedUrl("MainPage.qml"))
                             } else {
                                 console.log("Veuillez entrer un UserName et un Mot de Passe.")
                             }
