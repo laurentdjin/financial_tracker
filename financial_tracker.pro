@@ -1,9 +1,10 @@
-QT += quick
+QT += quick sql
 
 SOURCES += \
+        databasemanager.cpp \
         main.cpp
 
-resources.files = main.qml 
+resources.files = main.qml Page1.qml Page2.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources
 
@@ -17,3 +18,8 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES +=
+
+HEADERS += \
+    databasemanager.h
