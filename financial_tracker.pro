@@ -1,8 +1,8 @@
 QT += quick sql
 
 SOURCES += \
-        databasemanager.cpp \
-        main.cpp
+        main.cpp \
+        transactionmanager.cpp
 
 resources.files = main.qml Page1.qml Page2.qml
 resources.prefix = /$${TARGET}
@@ -22,4 +22,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 DISTFILES +=
 
 HEADERS += \
-    databasemanager.h
+    transactionmanager.h
