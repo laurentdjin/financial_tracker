@@ -3,7 +3,7 @@ QT += quick
 SOURCES += \
         main.cpp
 
-resources.files = main.qml 
+resources.files = main.qml Page4.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources
 
@@ -17,3 +17,6 @@ QML_DESIGNER_IMPORT_PATH =
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    Page4.qml
