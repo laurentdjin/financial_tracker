@@ -1,9 +1,9 @@
-QT += quick
+QT += quick sql
 
 SOURCES += \
         main.cpp
 
-resources.files = main.qml Page4.qml
+resources.files = main.qml Page1.qml Page2.qml Page4.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources
 
@@ -20,3 +20,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 DISTFILES += \
     Page4.qml
+
+DISTFILES +=
+
+HEADERS += \
+    databasemanager.h
