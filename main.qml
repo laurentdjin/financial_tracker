@@ -1,8 +1,17 @@
-import QtQuick
+import QtQuick 6.7
+import QtQuick.Controls 6.7
+import QtQuick.Layouts 6.7
 
-Window {
-    width: 640
-    height: 480
+ApplicationWindow {
     visible: true
-    title: qsTr("Hello World")
+    width: 600
+    height: 800
+    title: "Financial App"
+
+    StackView {
+        id: stackView
+        anchors.fill: parent
+        initialItem: Page4 {}
+    }
+
 }

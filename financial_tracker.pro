@@ -2,9 +2,10 @@ QT += quick sql
 
 SOURCES += \
         main.cpp \
-        transactionmanager.cpp
+        transactionmanager.cpp \
+        transaction.cpp
 
-resources.files = main.qml Page1.qml Page2.qml
+resources.files = main.qml Page1.qml Page2.qml Page3.qml Page4.qml
 resources.prefix = /$${TARGET}
 RESOURCES += resources
 
@@ -19,7 +20,13 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
+DISTFILES += \
+    Page4.qml
+
 DISTFILES +=
 
 HEADERS += \
-    transactionmanager.h
+
+    transactionmanager.h \
+    transaction.h
+
