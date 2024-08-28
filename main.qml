@@ -11,7 +11,7 @@ ApplicationWindow {
     StackView {
         id: stackView
         anchors.fill: parent
-        initialItem: Page4 {}
+        initialItem: Page1 {}
     }
 
 }

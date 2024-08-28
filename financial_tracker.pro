@@ -1,4 +1,5 @@
-QT += quick sql
+QT += quick \
+      sql
 
 SOURCES += \
         main.cpp \
@@ -26,7 +27,6 @@ DISTFILES += \
 DISTFILES +=
 
 HEADERS += \
-
     transactionmanager.h \
     transaction.h
 

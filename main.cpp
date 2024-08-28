@@ -1,24 +1,25 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QQmlContext>
+#include "transactionmanager.h"
 #include "transaction.h"
 
-int main(int argc, char *argv[])
-{
+int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
-
     QQmlApplicationEngine engine;
-    qmlRegisterType<Transaction>("financial_tracker", 1, 0, "Transaction");
-    const QUrl url(QStringLiteral("qrc:/financial_tracker/main.qml"));
-    QObject::connect(
-        &engine,
-        &QQmlApplicationEngine::objectCreated,
-        &app,
-        [url](QObject *obj, const QUrl &objUrl) {
-            if (!obj && url == objUrl)
-                QCoreApplication::exit(-1);
-        },
-        Qt::QueuedConnection);
+
+    // Créer une instance de TransactionManager
+    TransactionManager dbManager;
+    dbManager.createTable();
+
+    // Exposer la classe à QML
+    engine.rootContext()->setContextProperty("dbManager", &dbManager);
+
+    const QUrl url("qrc:/financial_tracker/main.qml");
     engine.load(url);
+
+    if (engine.rootObjects().isEmpty())
+        return -1;
 
     return app.exec();
 }
