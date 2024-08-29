@@ -18,7 +18,7 @@ Item {
 
             // Title Text
             Text {
-                text: "Historique"
+                text: "History"
                 anchors.horizontalCenter: parent.horizontalCenter
                 font.pixelSize: 20
             }
@@ -52,7 +52,7 @@ Item {
                                 break;
                         }
                         listView.visible = true;
-                        listView.currentIndex = 0; // Ensure list starts at the top
+                        listView.currentIndex = 0; // Ensure list starts at the top (not work)
                     }
                 }
 
@@ -69,7 +69,7 @@ Item {
                     onClicked: {
                         listView.dateFilter = dateField.text;
                         listView.visible = true;
-                        listView.currentIndex = 0; // Ensure list starts at the top
+                        listView.currentIndex = 0;
                         rowA.visible=true
                     }
                 }
@@ -81,11 +81,7 @@ Item {
             }
             Row {
                 id:rowA
-                // anchors.fill: parent
-                // spacing: 10
-                // padding: 5
                 spacing: 10
-                //anchors.horizontalCenter: parent.horizontalCenter
                 anchors.leftMargin: 10
                 anchors.rightMargin: 10
                 visible: false
@@ -122,32 +118,6 @@ Item {
                 property string filterType: ""
                 property string dateFilter: ""
                 model:transactionManager.transactions
-                // model: ListModel {
-                //     ListElement { type: "Income"; amount: "44"; date: "12-12-2024" }
-                //     ListElement { type: "Income"; amount: "55"; date: "12-12-2024" }
-                //     ListElement { type: "Income"; amount: "66"; date: "12-12-2024" }
-                //     ListElement { type: "Income"; amount: "66"; date: "12-12-2020" }
-                //     ListElement { type: "Spend"; amount: "44"; date: "12-12-2024" }
-                //     ListElement { type: "Spend"; amount: "55"; date: "12-12-2024" }
-                //     ListElement { type: "Spend"; amount: "66"; date: "12-12-2024" }
-                // }
-
-                // delegate: Rectangle {
-                //     width: parent.width
-                //     height: 30
-                //     //color: Qt.rgba(Math.random(), Math.random(), Math.random(), 1)
-                //       color: model.type === "Income" ? "lightgreen" : "lightcoral" //
-
-                //     visible: ((listView.filterType === "all" || model.type === listView.filterType) && listView.dateFilter === "") ||
-                //              ( model.date === listView.dateFilter)
-
-                //     Text {
-                //         text: "Transaction Type: " + model.type + " Amount: " + model.amount + " $ " + " Date: " + model.date
-                //         anchors.centerIn: parent
-                //         font.pointSize: 16
-                //     }
-                // }
-
                 delegate: Rectangle {
                     width: parent.width
                     height: 40

@@ -1,7 +1,9 @@
 QT += quick sql
 
 SOURCES += \
-        main.cpp
+        main.cpp \
+        transaction.cpp \
+        transactionmanager.cpp
 
 resources.files = main.qml Page1.qml Page2.qml Page4.qml
 resources.prefix = /$${TARGET}
@@ -24,4 +26,6 @@ DISTFILES += \
 DISTFILES +=
 
 HEADERS += \
-    databasemanager.h
+    databasemanager.h \
+    transaction.h \
+    transactionmanager.h
